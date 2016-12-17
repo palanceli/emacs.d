@@ -31,7 +31,7 @@
  truncate-lines nil
  truncate-partial-width-windows nil
  visible-bell t)
-(set-scroll-bar-mode nil)
+;;(set-scroll-bar-mode nil)
 (tool-bar-mode 0)
 
 

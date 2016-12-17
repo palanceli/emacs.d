@@ -1,3 +1,4 @@
+;;# load-path+=~/.emacs.d/lisp
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 (defconst *spell-check-support-enabled* nil) ;; Enable with t if you prefer
@@ -8,7 +9,7 @@
 ;;----------------------------------------------------------------------------
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 ;; (require 'init-compat)
-(require 'init-utils)
+(require 'init-utils) ;;# 为加载初始化文件提供一些自定义的函数和宏
 
 ;; Needed for Emacs version < 24. must come before elpa, as it may provide package.el
 ;; (require 'init-site-lisp)
@@ -23,7 +24,7 @@
 ;; Machinery for installing required packages.
 ;; explicitly call 'package-initialize to set up all packages installed via ELPA.
 ;; should come before all package-related config files
-(require 'init-elpa)
+(require 'init-elpa) ;;# 加载ELPA，并定义了require-package函数
 (require 'init-exec-path) ;; Set up $PATH
 
 ;;----------------------------------------------------------------------------
@@ -54,12 +55,12 @@
 (require 'init-auto-complete)
 ;; (require 'init-windows)
 ;; (require 'init-sessions)
-(require 'init-fonts)
+(require 'init-fonts) ;;# 以Server-Client模式启动时需额外设置字体
 ;; (require 'init-mmm)
 (require 'init-tabbar)
-(require 'init-editing-utils)
+(require 'init-editing-utils) ;;# 一些顺手的小工具
 (require 'init-evil)
-(require 'init-matlab)
+;; (require 'init-matlab)
 
 ;; (require 'init-vc)
 ;; (require 'init-darcs)

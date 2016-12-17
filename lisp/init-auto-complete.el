@@ -4,6 +4,8 @@
 (require-package 'auto-complete)
 (require 'auto-complete-config)
 (global-auto-complete-mode t)
+
+;;# 把自定义的dict加到auto-complete的字典中去
 (add-to-list 'ac-dictionary-directories
              (expand-file-name "lisp/custom-dicts" user-emacs-directory))
 

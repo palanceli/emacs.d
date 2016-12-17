@@ -50,7 +50,7 @@
 
 
 ;;; On-demand installation of packages
-
+;;# 判断package是否已经安装，如果没有则自动从elpa安装
 (defun require-package (package &optional min-version no-refresh)
   "Install given PACKAGE, optionally requiring MIN-VERSION.
 If NO-REFRESH is non-nil, the available package lists will not be

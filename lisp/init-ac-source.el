@@ -26,7 +26,11 @@
  /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed
  /usr/include/x86_64-linux-gnu
  /usr/include
-"
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.0.0/include
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
+/usr/local/Cellar/boost/1.62.0/include
+ "
                        ))))
 (defun my-ac-cc-mode-setup ()
   (setq ac-sources (append '(ac-source-clang) ac-sources)))
