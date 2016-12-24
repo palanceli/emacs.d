@@ -23,7 +23,7 @@
 ;(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 
 ;; We include the org repository for completeness, but don't normally
-;; use it.
+;; use it. 增加软件仓库
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 
 (when (< emacs-major-version 24)
@@ -78,7 +78,22 @@ locate PACKAGE."
 
 ;;; Fire up package.el
 (setq package-enable-at-startup nil)
+;;; 强行提前初始化ELPA，默认情况下Emacs在init.el加载完成后才开始初始化ELPA，
+;;; 而我们大多数包的初始化函数都在init.el中，如果不提前初始化ALPA会导致后面的
+;;; 初始化过程出错
 (package-initialize)
+
+;;; 有了ELPA，给Emacs装插件就非常容易了。如需要一个叫example的插件，可在
+;;; lisp/目录下增加一个文件init-example.el：
+;;;   ;; init-example.el
+;;;   (require-package 'example)
+;;;   ;; ELPA中的插件一般都提供"autoloads"方法，可以帮用户自动加载插件并做相应
+;;;   ;; 的配置。如果涉及到细节的配置，请自己看该插件的帮助文档。
+;;;   (require 'example-autoloads)
+;;;   (provide 'init-example)
+;;; 然后在init.el中加入一句(require 'init-example)
+;;; (注意这一句要放在(require 'init-elpa)之后)即可。
+
 
 ;; The cl-lib is distributed with Emacs >= 24.3 and is required by many packages.
 ;; For Emacs version < 24.3, it can be installed via ELPA. But you'd better move
