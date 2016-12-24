@@ -37,6 +37,8 @@
 ;;----------------------------------------------------------------------------
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
+;;; (load '<file>)和(require '<symbol-name>)的差别在于：load会执行文件中所有elisp语句；
+;;; 而require先查看features里是否存在<symbol-name>，如果存在则执行完毕，否则load文件。
 
 ;; (require-package 'wgrep)
 ;; (require-package 'project-local-variables)
@@ -54,6 +56,7 @@
 ;; (require 'init-uniquify)
 ;; (require 'init-ibuffer)
 ;; (require 'init-flycheck)
+(require 'init-ggtags)
 
 (require 'init-recentf)
 (require 'init-ido)
