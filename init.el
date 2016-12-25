@@ -34,6 +34,15 @@
 (require 'init-elpa) ;;# 加载ELPA，并定义了require-package函数
 (require 'init-exec-path) ;; Set up $PATH
 
+(when (not package-archive-contents)
+  (package-refresh-contents))
+
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+
+(require 'use-package)
+(setq use-package-always-ensure t)
+
 ;;----------------------------------------------------------------------------
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
@@ -57,12 +66,17 @@
 ;; (require 'init-ibuffer)
 ;; (require 'init-flycheck)
 (require 'init-ggtags)
+(require 'init-helm)
+(require 'init-sr-speedbar)
 
 (require 'init-recentf)
 (require 'init-ido)
 (require 'init-yasnippet)
 (require 'init-hippie-expand)
 (require 'init-auto-complete)
+(require 'init-company)
+(require 'init-company-c-headers)
+
 ;; (require 'init-windows)
 ;; (require 'init-sessions)
 (require 'init-fonts) ;;# 以Server-Client模式启动时需额外设置字体
