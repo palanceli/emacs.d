@@ -34,14 +34,14 @@
 (require 'init-elpa) ;;# 加载ELPA，并定义了require-package函数
 (require 'init-exec-path) ;; Set up $PATH
 
-(when (not package-archive-contents)
-  (package-refresh-contents))
+;(when (not package-archive-contents)
+;  (package-refresh-contents))
 
-(unless (package-installed-p 'use-package)
-  (package-install 'use-package))
+;(unless (package-installed-p 'use-package)
+;  (package-install 'use-package))
 
-(require 'use-package)
-(setq use-package-always-ensure t)
+;(require 'use-package)
+;(setq use-package-always-ensure t)
 
 ;;----------------------------------------------------------------------------
 ;; Load configs for specific features and modes
