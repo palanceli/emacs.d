@@ -34,7 +34,6 @@
 ;;(set-scroll-bar-mode nil)
 (tool-bar-mode 0)
 
-
 ;; auto-revert
 (global-auto-revert-mode)
 (setq global-auto-revert-non-file-buffers t
@@ -70,6 +69,7 @@
 ;; (require 'hlinum)
 (hlinum-activate)
 (global-linum-mode t)
+(setq linum-format "%4d ")
 
 ;; visual line
 (global-visual-line-mode t)
